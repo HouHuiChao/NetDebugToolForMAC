@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		203DB5BA21420B3600C9D9ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 203DB5B921420B3600C9D9ED /* AppDelegate.m */; };
+		203DB5BD21420B3600C9D9ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 203DB5BC21420B3600C9D9ED /* main.m */; };
+		203DB5BF21420B3600C9D9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203DB5BE21420B3600C9D9ED /* Assets.xcassets */; };
+		203DB5C221420B3600C9D9ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 203DB5C021420B3600C9D9ED /* MainMenu.xib */; };
+		203DB5CB21421D8400C9D9ED /* Socket.m in Sources */ = {isa = PBXBuildFile; fileRef = 203DB5CA21421D8400C9D9ED /* Socket.m */; settings = {ASSET_TAGS = (); }; };
+		203DB5CF21423F4D00C9D9ED /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 203DB5CE21423F4D00C9D9ED /* Common.m */; settings = {ASSET_TAGS = (); }; };
+		203DB5D6214264A500C9D9ED /* CmdList.m in Sources */ = {isa = PBXBuildFile; fileRef = 203DB5D4214264A500C9D9ED /* CmdList.m */; settings = {ASSET_TAGS = (); }; };
+		203DB5D7214264A500C9D9ED /* CmdList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 203DB5D5214264A500C9D9ED /* CmdList.xib */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		203DB5B521420B3600C9D9ED /* NetDebugTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetDebugTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		203DB5B821420B3600C9D9ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		203DB5B921420B3600C9D9ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		203DB5BC21420B3600C9D9ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		203DB5BE21420B3600C9D9ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		203DB5C121420B3600C9D9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		203DB5C321420B3600C9D9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		203DB5C921421D8400C9D9ED /* Socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Socket.h; path = Models/Socket.h; sourceTree = "<group>"; };
+		203DB5CA21421D8400C9D9ED /* Socket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Socket.m; path = Models/Socket.m; sourceTree = "<group>"; };
+		203DB5CD21423F4D00C9D9ED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Models/Common.h; sourceTree = "<group>"; };
+		203DB5CE21423F4D00C9D9ED /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Models/Common.m; sourceTree = "<group>"; };
+		203DB5D3214264A500C9D9ED /* CmdList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdList.h; sourceTree = "<group>"; };
+		203DB5D4214264A500C9D9ED /* CmdList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmdList.m; sourceTree = "<group>"; };
+		203DB5D5214264A500C9D9ED /* CmdList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CmdList.xib; sourceTree = "<group>"; };
+		203DB5D821443F3400C9D9ED /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		203DB5B221420B3600C9D9ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		203DB5AC21420B3600C9D9ED = {
+			isa = PBXGroup;
+			children = (
+				203DB5B721420B3600C9D9ED /* NetDebugTool */,
+				203DB5B621420B3600C9D9ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		203DB5B621420B3600C9D9ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				203DB5B521420B3600C9D9ED /* NetDebugTool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		203DB5B721420B3600C9D9ED /* NetDebugTool */ = {
+			isa = PBXGroup;
+			children = (
+				203DB5CC21421D8F00C9D9ED /* Models */,
+				203DB5B821420B3600C9D9ED /* AppDelegate.h */,
+				203DB5B921420B3600C9D9ED /* AppDelegate.m */,
+				203DB5BE21420B3600C9D9ED /* Assets.xcassets */,
+				203DB5C021420B3600C9D9ED /* MainMenu.xib */,
+				203DB5C321420B3600C9D9ED /* Info.plist */,
+				203DB5D821443F3400C9D9ED /* PrefixHeader.pch */,
+				203DB5BB21420B3600C9D9ED /* Supporting Files */,
+			);
+			path = NetDebugTool;
+			sourceTree = "<group>";
+		};
+		203DB5BB21420B3600C9D9ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				203DB5BC21420B3600C9D9ED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		203DB5CC21421D8F00C9D9ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				203DB5C921421D8400C9D9ED /* Socket.h */,
+				203DB5CA21421D8400C9D9ED /* Socket.m */,
+				203DB5CD21423F4D00C9D9ED /* Common.h */,
+				203DB5CE21423F4D00C9D9ED /* Common.m */,
+				203DB5D3214264A500C9D9ED /* CmdList.h */,
+				203DB5D4214264A500C9D9ED /* CmdList.m */,
+				203DB5D5214264A500C9D9ED /* CmdList.xib */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		203DB5B421420B3600C9D9ED /* NetDebugTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 203DB5C621420B3600C9D9ED /* Build configuration list for PBXNativeTarget "NetDebugTool" */;
+			buildPhases = (
+				203DB5B121420B3600C9D9ED /* Sources */,
+				203DB5B221420B3600C9D9ED /* Frameworks */,
+				203DB5B321420B3600C9D9ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetDebugTool;
+			productName = NetDebugTool;
+			productReference = 203DB5B521420B3600C9D9ED /* NetDebugTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		203DB5AD21420B3600C9D9ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "HHC-MAC";
+				TargetAttributes = {
+					203DB5B421420B3600C9D9ED = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 203DB5B021420B3600C9D9ED /* Build configuration list for PBXProject "NetDebugTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 203DB5AC21420B3600C9D9ED;
+			productRefGroup = 203DB5B621420B3600C9D9ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				203DB5B421420B3600C9D9ED /* NetDebugTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		203DB5B321420B3600C9D9ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203DB5D7214264A500C9D9ED /* CmdList.xib in Resources */,
+				203DB5BF21420B3600C9D9ED /* Assets.xcassets in Resources */,
+				203DB5C221420B3600C9D9ED /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		203DB5B121420B3600C9D9ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203DB5D6214264A500C9D9ED /* CmdList.m in Sources */,
+				203DB5CF21423F4D00C9D9ED /* Common.m in Sources */,
+				203DB5BD21420B3600C9D9ED /* main.m in Sources */,
+				203DB5BA21420B3600C9D9ED /* AppDelegate.m in Sources */,
+				203DB5CB21421D8400C9D9ED /* Socket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		203DB5C021420B3600C9D9ED /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				203DB5C121420B3600C9D9ED /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		203DB5C421420B3600C9D9ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		203DB5C521420B3600C9D9ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		203DB5C721420B3600C9D9ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NetDebugTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhc.NetDebugTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		203DB5C821420B3600C9D9ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NetDebugTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhc.NetDebugTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		203DB5B021420B3600C9D9ED /* Build configuration list for PBXProject "NetDebugTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203DB5C421420B3600C9D9ED /* Debug */,
+				203DB5C521420B3600C9D9ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		203DB5C621420B3600C9D9ED /* Build configuration list for PBXNativeTarget "NetDebugTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203DB5C721420B3600C9D9ED /* Debug */,
+				203DB5C821420B3600C9D9ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 203DB5AD21420B3600C9D9ED /* Project object */;
+}
