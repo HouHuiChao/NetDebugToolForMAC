@@ -19,6 +19,8 @@
     // Insert code here to initialize your application
 //    [IPAddr setBackgroundColor:[NSColor greenColor]];
 //    [IPPort setBackgroundColor:[NSColor greenColor]];
+    mSocket = [[Socket alloc] init];
+    cmdArr = [[NSMutableArray alloc]init];
     
     [IPAddr becomeFirstResponder];
     [SingleCMD setEnabled:NO];
@@ -29,8 +31,7 @@
     [CMDLoadOKBTN setEnabled:NO];
     [CmdTable setDelegate:self];
     [CmdTable setDataSource:self];
-    mSocket = [[Socket alloc] init];
-    cmdArr = [[NSMutableArray alloc]init];
+
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(UpdateCMDTable:) name:@"UPDATECOMMAND" object:nil];
 }
 
@@ -115,6 +116,9 @@
 //
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
+    if (cmdArr.count == 0) {
+        return;
+    }
     NSDictionary *data = [cmdArr objectAtIndex:row];
     NSString *identifier = [tableColumn identifier];
 //    NSLog(@"data = %@",data);

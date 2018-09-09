@@ -761,7 +761,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yDn-gb-54X">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="yDn-gb-54X">
                             <rect key="frame" x="429" y="1" width="15" height="360"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
@@ -841,7 +841,7 @@ DQ
                     <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDO-RK-xdT">
                         <rect key="frame" x="9" y="35" width="445" height="295"/>
                         <clipView key="contentView" ambiguous="YES" id="MUa-XC-5Dq">
-                            <rect key="frame" x="0.0" y="23" width="445" height="272"/>
+                            <rect key="frame" x="0.0" y="0.0" width="445" height="295"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView identifier="CmdTable" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="2M4-pl-8HQ" id="kuv-ro-Bfo">
@@ -866,7 +866,7 @@ DQ
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
                                         <tableColumn identifier="Delay(ms)" width="102" minWidth="40" maxWidth="1000" id="ruk-Gn-ivu">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Delay">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Delay(ms)">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -890,12 +890,12 @@ DQ
                         </clipView>
                         <animations/>
                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="hMK-5D-oOK">
-                            <rect key="frame" x="1" y="119" width="223" height="15"/>
+                            <rect key="frame" x="-8" y="8" width="0.0" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ock-2l-jUx">
-                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <rect key="frame" x="-15" y="15" width="15" height="0.0"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
