@@ -34,6 +34,9 @@
     }
     
     int iPortID =[port intValue];
+    NSString *sysCmd = [NSString stringWithFormat:@"ping %@ -t 1",IP];
+    const char * cmdStr = [IP cStringUsingEncoding:NSUTF8StringEncoding];
+    system(cmdStr);
     
     struct sockaddr_in daddr;
     memset((void *)&daddr,0,sizeof(daddr));
@@ -81,7 +84,7 @@
 }
 
 - (NSString *)CommunicationBySocket:(NSString*)cmd
-                           withTime:(NSNumber *)tt
+                           withTime:(NSString *)tt
                          andPattern:(NSString *)patternStr{
     if (self->socketFD < 0) {
         return nil;
@@ -98,9 +101,10 @@
             if (patternStr) {
                 receive = [Common getExpectStringWithStr:receive andPatttern:patternStr];
             }
+            return receive;
         }
     }
-    return receive;
+    return nil;
 }
 
 - (BOOL) writeCMD:(NSString *) cmd{

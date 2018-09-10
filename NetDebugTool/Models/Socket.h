@@ -22,6 +22,6 @@
 - (BOOL)ConnectSocketIP:(NSString *)IP andPort:(NSNumber *)port;
 - (BOOL)DisconnectBySocket;
 - (NSString *)CommunicationBySocket:(NSString*)cmd
-                           withTime:(NSNumber *)tt
+                           withTime:(NSString *)tt
                          andPattern:(NSString *)patternStr;
 @end

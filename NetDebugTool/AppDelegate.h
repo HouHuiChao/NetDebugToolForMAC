@@ -16,6 +16,7 @@
     __weak IBOutlet NSTextField *IPPort;
     __weak IBOutlet NSTextField *SingleCMD;
     __weak IBOutlet NSButton *ConnectBTN;
+    __weak IBOutlet NSButton *disconnectBTN;
     __unsafe_unretained IBOutlet NSTextView *RecvText;
     __weak IBOutlet NSButton *SendBTN;
     __weak IBOutlet NSButton *LoadFileBTN;

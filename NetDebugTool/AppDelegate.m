@@ -22,6 +22,7 @@
     mSocket = [[Socket alloc] init];
     cmdArr = [[NSMutableArray alloc]init];
     
+    [disconnectBTN setEnabled:NO];
     [IPAddr becomeFirstResponder];
     [SingleCMD setEnabled:NO];
     [SendBTN setEnabled:NO];
@@ -58,7 +59,7 @@
     [IPAddr setBackgroundColor:[NSColor yellowColor]];
     [IPPort setBackgroundColor:[NSColor yellowColor]];
     [ConnectBTN setEnabled:NO];
-    
+    [disconnectBTN setEnabled:YES];
     [LoadFileBTN setEnabled:YES];
     [SingleCMD setEnabled:YES];
     [SendBTN setEnabled:YES];
@@ -67,11 +68,42 @@
     return ;
 }
 - (IBAction)sendCMD:(id)sender {
-    
+    BOOL ret = (SingleCMD.stringValue == nil) || ([SingleCMD.stringValue isEqualToString:@""]);
+    if (ret && cmdArr.count == 0) {
+        return ;
+    }
+    [SendBTN setEnabled:NO];
+    NSString *recv = nil;
+    if (cmdArr.count == 0) {
+        NSString * tt = @"200";
+        NSString *cmd = [NSString stringWithFormat:@"%@\r\n",SingleCMD.stringValue];
+        [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:\n%@",cmd]]];
+        [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
+        recv = [mSocket CommunicationBySocket:cmd withTime:tt andPattern:nil];
+    }
+    else{
+        for (NSDictionary *cmdDict in cmdArr) {
+            NSString *cmdStr = [cmdDict objectForKey:@"Command"];
+            NSString *tt = [cmdDict objectForKey:@"Delay"];
+             NSString *cmd = [NSString stringWithFormat:@"%@\r\n",cmdStr];
+            [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:\n%@",cmd]]];
+            [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
+            recv = [mSocket CommunicationBySocket:cmd
+                                                   withTime:tt andPattern:nil];
+        }
+    }
+    if (recv != nil) {
+        [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"RecevieData:\n%@",recv]]];
+        [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
+        [SendBTN setEnabled:YES];
+    }
 }
 
 - (IBAction)LoadCmdFromFile:(id)sender {
     [SendBTN setEnabled:NO];
+    [SingleCMD setStringValue:@""];
+    [SingleCMD setEnabled:NO];
+    [disconnectBTN setEnabled:NO];
     if(newCmd == nil){
         newCmd = [[CmdList alloc]initWithWindowNibName:@"CmdList"];
     }
@@ -98,6 +130,10 @@
         CmdTable.delegate = self;
         CmdTable.dataSource = self;
         [CmdTable reloadData];
+        
+        [SingleCMD setEnabled:YES];
+        [SendBTN setEnabled:YES];
+        [disconnectBTN setEnabled:YES];
     }
 }
 //返回表格的行数
@@ -116,6 +152,7 @@
 //
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
+    //非空判断
     if (cmdArr.count == 0) {
         return;
     }
