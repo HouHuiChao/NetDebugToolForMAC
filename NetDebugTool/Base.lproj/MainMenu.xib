@@ -799,17 +799,6 @@
                             <action selector="sendCMD:" target="Voe-Tx-rLC" id="Cfi-1j-Vze"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJb-bk-YGK">
-                        <rect key="frame" x="468" y="331" width="124" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="CleanBuffer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tDp-hQ-eeq">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="systemBlack" size="14"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="resetReceive:" target="Voe-Tx-rLC" id="366-27-GKY"/>
-                        </connections>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Oq-Dn-B1M">
                         <rect key="frame" x="472" y="456" width="96" height="20"/>
                         <animations/>
@@ -838,6 +827,9 @@
 DQ
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="ensureCMD:" target="Voe-Tx-rLC" id="QSP-kq-Y3E"/>
+                        </connections>
                     </button>
                     <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDO-RK-xdT">
                         <rect key="frame" x="9" y="35" width="445" height="295"/>
@@ -906,6 +898,17 @@ DQ
                             <animations/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJb-bk-YGK">
+                        <rect key="frame" x="468" y="331" width="124" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="CleanBuffer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tDp-hQ-eeq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="systemBlack" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetReceive:" target="Voe-Tx-rLC" id="366-27-GKY"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-k8-uqR">
                         <rect key="frame" x="595" y="576" width="123" height="32"/>
                         <animations/>
@@ -913,6 +916,9 @@ DQ
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="systemBlack" size="16"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="disconnectIP:" target="Voe-Tx-rLC" id="lbU-pO-MwX"/>
+                        </connections>
                     </button>
                 </subviews>
                 <animations/>

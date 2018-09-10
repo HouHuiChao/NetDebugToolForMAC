@@ -91,12 +91,11 @@
     }
     NSString *receive = nil;
     if ([self writeCMD:cmd]) {
+        double timeout = 5;
+        receive = [self readWithTime:timeout];
         if (tt) {
-            double timeout = tt.doubleValue;
-            receive = [self readWithTime:timeout];
+            [NSThread sleepForTimeInterval:[tt doubleValue]];
         }
-        else
-            receive = [self readLineFromSocket];
         if (receive != nil) {
             if (patternStr) {
                 receive = [Common getExpectStringWithStr:receive andPatttern:patternStr];
@@ -104,6 +103,7 @@
             return receive;
         }
     }
+    [NSThread sleepForTimeInterval:[tt doubleValue]];
     return nil;
 }
 

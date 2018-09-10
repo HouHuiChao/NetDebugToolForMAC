@@ -26,7 +26,7 @@
     [IPAddr becomeFirstResponder];
     [SingleCMD setEnabled:NO];
     [SendBTN setEnabled:NO];
-    [LoadFileBTN setEnabled:NO];
+//    [LoadFileBTN setEnabled:NO];
     [RecvText setEditable:NO];
     [ReleaseBuffer setEnabled:NO];
     [CMDLoadOKBTN setEnabled:NO];
@@ -73,29 +73,55 @@
         return ;
     }
     [SendBTN setEnabled:NO];
+    [disconnectBTN setEnabled:NO];
+    [SingleCMD setEnabled:NO];
+    [LoadFileBTN setEnabled:NO];
+    [ReleaseBuffer setEnabled:NO];
+    [CmdTable setEnabled:NO];
+    [CMDLoadOKBTN setEnabled:NO];
+    
+    [self communicateBySocket];
+    
+    [disconnectBTN setEnabled:YES];
+    [SingleCMD setEnabled:YES];
+    [LoadFileBTN setEnabled:YES];
+    [SendBTN setEnabled:YES];
+    [ReleaseBuffer setEnabled:YES];
+    [CmdTable setEnabled:YES];
+}
+
+- (void) communicateBySocket{
     NSString *recv = nil;
     if (cmdArr.count == 0) {
         NSString * tt = @"200";
         NSString *cmd = [NSString stringWithFormat:@"%@\r\n",SingleCMD.stringValue];
-        [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:\n%@",cmd]]];
+        [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:(delay:%@)\n%@",tt,cmd]]];
         [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
         recv = [mSocket CommunicationBySocket:cmd withTime:tt andPattern:nil];
+        [self showRecv:recv];
     }
     else{
         for (NSDictionary *cmdDict in cmdArr) {
             NSString *cmdStr = [cmdDict objectForKey:@"Command"];
             NSString *tt = [cmdDict objectForKey:@"Delay"];
-             NSString *cmd = [NSString stringWithFormat:@"%@\r\n",cmdStr];
-            [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:\n%@",cmd]]];
+            NSString *cmd = [NSString stringWithFormat:@"%@\r\n",cmdStr];
+            [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"SendCommand:(delay:%@)\n%@",tt,cmd]]];
             [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
             recv = [mSocket CommunicationBySocket:cmd
-                                                   withTime:tt andPattern:nil];
+                                         withTime:tt andPattern:nil];
+            [self showRecv:recv];
         }
     }
+}
+
+- (void) showRecv:(NSString *)recv{
     if (recv != nil) {
         [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"RecevieData:\n%@",recv]]];
         [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
-        [SendBTN setEnabled:YES];
+    }
+    else{
+        [RecvText.textStorage appendAttributedString:[[NSAttributedString alloc]initWithString:@"Receive ERROR\n"]];
+        [RecvText scrollRangeToVisible:NSMakeRange(RecvText.string.length, 1)];
     }
 }
 
@@ -112,6 +138,16 @@
 
 - (IBAction)resetReceive:(id)sender {
     [RecvText setString:@""];
+}
+- (IBAction)ensureCMD:(id)sender {
+    [CMDLoadOKBTN setEnabled:NO];
+
+    [disconnectBTN setEnabled:NO];
+    [LoadFileBTN setEnabled:NO];
+    [CmdTable setEnabled:NO];
+    
+    [SendBTN setEnabled:YES];
+    [disconnectBTN setEnabled:YES];
 }
 
 //接收通知，更新TableView
@@ -132,9 +168,22 @@
         [CmdTable reloadData];
         
         [SingleCMD setEnabled:YES];
-        [SendBTN setEnabled:YES];
+//        [SendBTN setEnabled:YES];
         [disconnectBTN setEnabled:YES];
+        [CMDLoadOKBTN setEnabled:YES];
     }
+}
+- (IBAction)disconnectIP:(id)sender {
+    [SingleCMD setEnabled:NO];
+    [SendBTN setEnabled:NO];
+    [ReleaseBuffer setEnabled:NO];
+    [LoadFileBTN setEnabled:NO];
+    [CMDLoadOKBTN setEnabled:NO];
+    [CmdTable setEnabled:NO];
+    [IPAddr setEnabled:YES];
+    [IPPort setEnabled:YES];
+    [disconnectBTN setEnabled:NO];
+    [IPAddr becomeFirstResponder];
 }
 //返回表格的行数
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
